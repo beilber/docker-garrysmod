@@ -32,6 +32,11 @@ fi
 
 RUNCMD="$RUNCMD +gamemode \"$GAMEMODE\""
 
+if [ ! -z "$CONVARS" ]
+then
+        RUNCMD="$RUNCMD $CONVARS"
+fi
+
 if [ ! -z "$COLLECTION" ]
 then
 	if [ -z "$AUTHKEY" ]
@@ -47,5 +52,3 @@ else
 fi
 
 $RUNCMD
-
-
